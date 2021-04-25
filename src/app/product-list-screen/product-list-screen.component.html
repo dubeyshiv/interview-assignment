@@ -1,0 +1,18 @@
+<header></header>
+<div class="container">
+    <div>
+        <button
+        pButton
+        type="button"
+        class="p-button-raised p-button-rounded p-button-success"
+        label="Add Product"
+        id="add-product-dialog-button"
+        (click)="addProductButtonClick()"
+        ></button>
+    </div>
+    <div class="mt-12">
+        <app-product-table></app-product-table>
+    </div>
+</div>
+
+<app-add-edit-product></app-add-edit-product>

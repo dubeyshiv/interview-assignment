@@ -1,0 +1,11 @@
+{
+  "product": [
+    {
+      "name": "Apple",
+      "description": "Kasmiri Apple",
+      "price": "50",
+      "stock": "100",
+      "id": 1
+    }
+  ]
+}

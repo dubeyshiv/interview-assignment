@@ -1,0 +1,43 @@
+<p-dialog [(visible)]="commonService.addEditProductDialogVisible"
+[style]="{width: '500px'}"
+blockScroll="true"
+dismissableMask="true"
+closable="true"
+draggable="false"
+appendTo="body"
+modal="true"
+>
+  <p-header>
+      {{commonService.dialogIsInEditMode ? 'Edit Product' : 'Add Product'}}
+  </p-header>
+  <div class="container">
+    <form [formGroup]="commonService.addEditProductForm">
+        <div class="p-grid">
+            <div class="p-col-6">
+                <div class="border-gray container height-full">
+                      <img alt="image"/>  
+                </div>
+            </div>
+            <div class="p-col-6">
+                <div>
+                    <input type="text" formControlName="name" pInputText class="p-inputtext-sm" placeholder="Enter Name">
+                </div>
+                <div class="mt-12">
+                    <input  type="text" formControlName="description" pInputText class="p-inputtext-sm" placeholder="Enter Description">
+                </div>
+                <div class="mt-12">
+                    <input class="mt-12" type="text" formControlName="price" pInputText class="p-inputtext-sm" placeholder="Enter Price">
+                </div>
+                <div class="mt-12">
+                    <input type="text" formControlName="stock" pInputText class="p-inputtext-sm" placeholder="Enter Stock Value">
+                </div>
+            </div>
+        </div>
+    </form>
+  </div>
+  <p-footer>
+    <button pButton type="button" class="p-button-raised p-button-rounded" [label]="commonService.dialogIsInEditMode ? 'Update' : 'Add'" (click)="add()" [disabled]="this.commonService.addEditProductForm.invalid"></button>
+    <button pButton type="button" class="p-button-raised p-button-rounded p-button-secondary" label="Cancel" (click)="cancel()"></button>
+  </p-footer>
+</p-dialog>
+<p-toast></p-toast>
